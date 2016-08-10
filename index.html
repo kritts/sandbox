@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>YouTube embed test page</title>
+      <title>YouTube Flash embed test page</title>
   </head>
   <body>
-
-    <h1 id='title1'> www.youtube.com/v/cW44BpXpjYw </h1>
+    <h1>Regular case, uses Flash</h1>
     <object>
-      <embed id='embed1' type="application/x-shockwave-flash" src="http://www.youtube.com/v/cW44BpXpjYw"/>
+      <embed type="application/x-shockwave-flash" src="http://www.youtube.com/v/cW44BpXpjYw"/>
     </object>
 
-
-    <h1 id='title2'> [bad url] youtube.com/v/eoUf1bbMTa8&hl=pl&fs=1&start=83 </h1>
+    <h1>Regular case, uses Flash, https</h1>
     <object>
-      <embed  id='embed2' type="application/x-shockwave-flash" src="http://www.youtube.com/v/eoUf1bbMTa8&hl=pl&fs=1&start=83"/>
+      <embed type="application/x-shockwave-flash" src="https://www.youtube.com/v/cW44BpXpjYw"/>
     </object>
 
-
-    <h1 id='title3'>http://www.youtube.com/v/eoUf1bbMTa8?hl=pl&fs=1&start=83 </h1>
+    <h1>Valid parameter construct, one parameter</h1>
     <object>
-      <embed  id='embed3' type="application/x-shockwave-flash" src="http://www.youtube.com/v/eoUf1bbMTa8?hl=pl&fs=1&start=83"/>
+      <embed type="application/x-shockwave-flash" src="http://www.youtube.com/v/eoUf1bbMTa8?start=83"/>
     </object>
- 
-    <h1>enable js api</h1>
+
+    <h1>Valid parameter construct, multiple parameters</h1>
+    <object>
+      <embed type="application/x-shockwave-flash" src="http://www.youtube.com/v/eoUf1bbMTa8?fs=1&start=83"/>
+    </object>
+
+    <h1>Invalid parameter construct, one parameter</h1>
+    <object>
+      <embed type="application/x-shockwave-flash" src="http://www.youtube.com/v/eoUf1bbMTa8&start=83"/>
+    </object>
+
+    <h1>Invalid parameter construct, many parameters</h1>
+    <object>
+      <embed type="application/x-shockwave-flash" src="http://www.youtube.com/v/eoUf1bbMTa8&hl=pl&fs=1&start=83"/>
+    </object>
+
+    <h1>youtube-nocookie.com</h1>
+    <object>
+      <embed type="application/x-shockwave-flash" src="http://www.youtube-nocookie.com/v/Dxy4n0UT82o"/>
+    </object>
+
+    <h1>enablejsapi=1</h1>
     <object>
       <embed type="application/x-shockwave-flash" src="http://www.youtube.com/v/eoUf1bbMTa8?enablejsapi=1"/>
     </object>
-
-
-
   </body>
 </html>
